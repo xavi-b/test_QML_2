@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/DragTile.qml</file>
+        <file>qml/DropTile.qml</file>
+        <file>qml/Tiles.qml</file>
+        <file>images/image.jpg</file>
+    </qresource>
+</RCC>
