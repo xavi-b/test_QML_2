@@ -33,11 +33,13 @@ Rectangle {
         drag.target: root
 
         onReleased: {
+            var oldParent = root.parent
             root.parent = root.Drag.target !== null ? root.Drag.target : root.parent
-            //TODO
-//            root.x = mouse.x
-//            root.y = mouse.y
             console.log(root.parent)
+            var pos = root.parent.mapFromItem(oldParent, root.x, root.y)
+            console.log(pos)
+            root.x = pos.x < 0 ? 0 : (pos.x > root.parent.width - root.width ? root.parent.width - root.width : pos.x)
+            root.y = pos.y < 0 ? 0 : (pos.y > root.parent.height - root.height ? root.parent.height - root.height : pos.y)
         }
     }
 }
