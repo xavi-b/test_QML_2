@@ -49,14 +49,16 @@ Rectangle {
                 rightRectangle.dropProxy.children[i].destroy()
             }
 
-            for (var e in list1) {
-                console.log("Creating: " + e)
+            console.log("list1.length(): " + list1.length())
+            for (var i = 0; i < list1.length(); ++i) {
+                var e = list1.get(i)
+                console.log("Creating: " + e.objectName)
                 var comp = Qt.createComponent("DragTile.qml");
-                var obj = comp.createObject(rightRectangle.dropProxy);
-                obj.objectName = e
-                obj.x = list1[e].x
-                obj.y = list1[e].y
-                obj.source = list1[e].source
+                var obj = comp.createObject(rightRectangle.dropProxy, { listElement: e });
+                obj.objectName = e.objectName
+                obj.x = e.x
+                obj.y = e.y
+                obj.source = e.source
             }
         }
     }

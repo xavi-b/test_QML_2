@@ -3,6 +3,8 @@ import QtQuick 2.0
 Image {
     id: root
 
+    property var listElement: null
+
     width: 64
     height: 64
 
@@ -36,11 +38,13 @@ Image {
             root.x = pos.x < 0 ? 0 : (pos.x > root.parent.width - root.width ? root.parent.width - root.width : pos.x)
             root.y = pos.y < 0 ? 0 : (pos.y > root.parent.height - root.height ? root.parent.height - root.height : pos.y)
             console.log(root.objectName)
-            //TODO undefined
-            console.log(JSON.stringify(list1[root.objectName]))
-            list1[root.objectName].x = root.x
-            list1[root.objectName].y = root.y
-            list1[root.objectName].source = root.source
+
+            if(listElement == null){
+                root.listElement = list1.add(root.objectName, root.x, root.y, root.source)
+            } else {
+                root.listElement.x = root.x
+                root.listElement.y = root.y
+            }
         }
     }
 }

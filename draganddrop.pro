@@ -9,4 +9,4 @@ target.path = $$[QT_INSTALL_EXAMPLES]/quick/draganddrop
 INSTALLS += target
 
 HEADERS += \
-    Image1.h
+    ImageTest.h
