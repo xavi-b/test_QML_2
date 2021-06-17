@@ -5,5 +5,6 @@
         <file>qml/DropTile.qml</file>
         <file>qml/Tiles.qml</file>
         <file>images/image.jpg</file>
+        <file>images/small.jpg</file>
     </qresource>
 </RCC>

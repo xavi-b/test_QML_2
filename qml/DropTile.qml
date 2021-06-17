@@ -1,7 +1,6 @@
 import QtQuick 2.0
 
 Flickable {
-    property string colorKey
     property alias dropProxy: dragTarget
 
     contentWidth: image.width
@@ -14,9 +13,6 @@ Flickable {
 
         DropArea {
             id: dragTarget
-
-            keys: [ colorKey ]
-
             anchors.fill: parent
         }
     }
